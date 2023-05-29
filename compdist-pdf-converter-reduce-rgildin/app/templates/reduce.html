@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reduce PDF Resolution</title>
+</head>
+<body>
+	<h1>Reduce PDF Resolution</h1>
+	{% if error %}
+	<p style="color: red;">{{ error }}</p>
+	{% endif %}
+	<form method="post" action="/reduce" enctype="multipart/form-data">
+		<label for="file">Choose a PDF file:</label>
+		<input type="file" id="file" name="file"><br><br>
+		<label for="resolution">Desired resolution (dpi):</label>
+		<input type="number" id="resolution" name="resolution" min="1" max="300" value="150"><br><br>
+		<input type="submit" value="Reduce">
+	</form>
+</body>
+</html>

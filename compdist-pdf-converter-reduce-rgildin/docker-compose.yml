@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  app:
+    build: app
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_APP: app/app.py
+    command: gunicorn app:app -b 0.0.0.0:5000

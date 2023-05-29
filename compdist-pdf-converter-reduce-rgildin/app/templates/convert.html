@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Convert PDF to Text</title>
+</head>
+<body>
+	<h1>Convert PDF to Text</h1>
+	{% if error %}
+	<p style="color: red;">{{ error }}</p>
+	{% endif %}
+	<form method="post" action="/convert" enctype="multipart/form-data">
+		<label for="file">Choose a PDF file:</label>
+		<input type="file" id="file" name="file"><br><br>
+		<input type="submit" value="Convert">
+	</form>
+</body>
+</html>
